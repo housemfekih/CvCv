@@ -1,0 +1,21 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+    <h1>Champ creation</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+         <div>
+         <br>
+        <button type="button" class="btn btn-success btn-rounded waves-light waves-effect w-md"  style="display: block; margin: 0 auto;">Creer un nouveau champ</button>
+
+    </div>
+    {{ form_end(form) }}
+
+    <ul>
+        
+            <a href="{{ path('champ_index') }}"class="btn btn-success btn-rounded waves-light waves-effect w-md">Retour a la liste</a>
+
+        
+    </ul>
+{% endblock %}

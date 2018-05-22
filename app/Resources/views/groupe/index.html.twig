@@ -1,0 +1,51 @@
+ {% extends 'admin.html.twig' %}
+
+{% block body %}
+    <h1>Groupe list</h1>
+ <div class="row">
+ 
+                            <div class="col-12">
+                                <div class="card-box table-responsive">
+                                    <h4 class="m-t-0 header-title"><b>Table champs</b></h4>
+                                    <p class="text-muted font-14 m-b-30">
+ 
+
+                                    <table id="datatable" class="table table-bordered">
+                                       <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nomgroupe</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+
+         <tbody>
+        {% for groupe in groupes %}
+            <tr>
+                <td><a href="{{ path('groupe_show', { 'id': groupe.id }) }}">{{ groupe.id }}</a></td>
+                <td>{{ groupe.nomGroupe }}</td>
+                <td>
+                    <ul>
+
+                            <a href="{{ path('groupe_show', { 'id': groupe.id }) }}"><i class=" dripicons-pencil"></i></a>
+
+                            <a href="{{ path('groupe_edit', { 'id': groupe.id }) }}"><i class="fi-eye"></i></a>
+
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div> <!-- end row -->
+
+
+   <ul>
+      <a href="{{ path('groupe_new') }}"class="btn btn-success btn-rounded waves-light waves-effect w-md">Creer groupe</a>
+
+    </ul>
+{% endblock %}

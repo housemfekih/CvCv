@@ -1,0 +1,40 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+    <h1>Champ</h1>
+
+<table class="table table-striped">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ champ.id }}</td>
+            </tr>
+            <tr>
+                <th>Nomchamps</th>
+                <td>{{ champ.nomChamp }}</td>
+            </tr>
+            <tr>
+                <th>Typechamps</th>
+                <td>{{ champ.typeChamp }}</td>
+            </tr>
+            <tr>
+                <th>Longeurchamps</th>
+                <td>{{ champ.longeurChamp }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('champ_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('champ_edit', { 'id': champ.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

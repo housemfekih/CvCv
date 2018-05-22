@@ -1,0 +1,76 @@
+<?php
+// src/AppBundle/Entity/User.php
+
+namespace AppBundle\Entity;
+
+use FOS\UserBundle\Model\User as BaseUser;
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="fos_user")
+ */
+class User extends BaseUser
+{
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    protected $prenom;
+
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    protected $nom;
+
+     /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    protected $sexe;
+
+     /**
+     * @ORM\Column(type="date", nullable=true)
+     */
+    protected $date_naissance;
+
+    /**
+       * @ORM\Column(type="string", nullable=true)
+     */
+    protected $phone_number;
+     
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="facebook_id", type="string", nullable=true)
+     */
+    protected $facebookID;
+ 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="google_id", type="string", nullable=true)
+     */
+    protected $googleID;
+        
+     /**
+     * @ORM\Column(type="string", nullable=true))
+     *
+     * @Assert\File(mimeTypes={ "image/jpg","image/png"  })
+     */
+     protected $avatar;
+
+
+
+    public function __construct()
+    {
+        parent::__construct();
+        // your own logic
+    }
+}

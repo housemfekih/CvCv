@@ -1,0 +1,35 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+    <h1>Template</h1>
+
+<table class="table table-striped">
+      <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ template.id }}</td>
+            </tr>
+            <tr>
+                <th>Nomtemplate</th>
+                <td>{{ template.nomTemplate }}</td>
+            </tr>
+            <tr>
+                <th>Fichiertemplate</th>
+                <td>{{ template.fichierTemplate }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+    
+            <a href="{{ path('template_index') }}">Back to the list</a>
+       
+            <a href="{{ path('template_edit', { 'id': template.id }) }}">Edit</a>
+        
+        
+            {{ form_start(delete_form) }}
+<button type="submit" class="btn btn-danger btn-rounded waves-light waves-effect w-md">Delete</button>            {{ form_end(delete_form) }}
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

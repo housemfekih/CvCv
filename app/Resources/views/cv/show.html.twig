@@ -1,0 +1,44 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+    <h1>Cv</h1>
+
+<table class="table table-striped">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ cv.id }}</td>
+            </tr>
+            <tr>
+                <th>Nomcv</th>
+                <td>{{ cv.nomCv }}</td>
+            </tr>
+            <tr>
+                <th>Fichiercv</th>
+                <td>{{ cv.fichierCv }}</td>
+            </tr>
+            <tr>
+                <th>Contenucv</th>
+                <td>{{ cv.contenuCv }}</td>
+            </tr>
+              <tr>
+                <th>TemplateId</th>
+                <td>{{ cv.TemplateId }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('cv_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('cv_edit', { 'id': cv.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

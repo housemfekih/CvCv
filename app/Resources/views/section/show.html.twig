@@ -1,0 +1,28 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+    <h1>Section</h1>
+
+<table class="table table-striped">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ section.id }}</td>
+            </tr>
+            <tr>
+                <th>Nomsection</th>
+                <td>{{ section.nomSection }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+            <a href="{{ path('section_index') }}" class="btn btn-info btn-rounded waves-light waves-effect w-md">Back to the list</a>
+<br>
+            <a href="{{ path('section_edit', { 'id': section.id }) }}" class="btn btn-warning btn-rounded waves-light waves-effect w-md">Edit</a>
+            {{ form_start(delete_form) }}
+            <br>
+<button type="submit" class="btn btn-danger btn-rounded waves-light waves-effect w-md">Delete</button>            {{ form_end(delete_form) }}
+            {{ form_end(delete_form) }}
+    </ul>
+{% endblock %}

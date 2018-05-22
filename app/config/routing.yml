@@ -1,0 +1,44 @@
+hwi_oauth_redirect:
+    resource: "@HWIOAuthBundle/Resources/config/routing/redirect.xml"
+    prefix:   /connect
+    
+hwi_oauth_connect:
+    resource: "@HWIOAuthBundle/Resources/config/routing/connect.xml"
+    prefix:   /connect
+
+hwi_oauth_login:
+    resource: "@HWIOAuthBundle/Resources/config/routing/login.xml"
+    prefix:   /connect   
+app_template:
+    resource: "@AppBundle/Controller/TemplateController.php"
+    type:     annotation
+
+app_user:
+    resource: "@AppBundle/Controller/UserController.php"
+    type:     annotation
+
+app_cv:
+    resource: "@AppBundle/Controller/CvController.php"
+    type:     annotation
+
+app_groupe:
+    resource: "@AppBundle/Controller/GroupeController.php"
+    type:     annotation
+
+app_section:
+    resource: "@AppBundle/Controller/SectionController.php"
+    type:     annotation
+
+app_champ:
+    resource: "@AppBundle/Controller/ChampController.php"
+    type:     annotation
+
+# app/config/routing.yml
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+fos_message:
+    resource: "@FOSMessageBundle/Resources/config/routing.xml"
+    prefix: /optional_routing_prefix    
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation

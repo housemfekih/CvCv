@@ -1,0 +1,109 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+
+<body class="bg-accpunt-pages">
+
+        <!-- HOME -->
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+
+                        <div class="wrapper-page">
+
+                            <div class="account-pages">
+                                <div class="account-box">
+                                    <div class="account-logo-box">
+                                        <h2 class="text-uppercase text-center">
+                                            <a href="index.html" class="text-success">
+                                                <span><img src="assets/images/logo_dark.png" alt="" height="18"></span>
+                                            </a>
+                                        </h2>
+                                        <h6 class="text-uppercase text-center font-bold mt-4">Register</h6>
+                                    </div>
+                                    <div class="account-content">
+
+    <div id="fos_user_registration_form">
+{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'form-horizontal'}}) }}
+  
+    <div>
+    	 <div class="form-group row m-b-20">
+ <div class="col-12">
+                      {{ form_widget(form.email, { 'attr': {'class': 'form-control', 'placeholder': "email"} }  ) }}
+
+                                               
+                           </div>
+                       </div>
+   	 <div class="form-group row m-b-20">
+ <div class="col-12">
+{{ form_widget(form.username, { 'attr': {'class': 'form-control', 'placeholder': "username"} }  ) }}
+
+                       
+                           </div>
+                       </div>
+
+
+                       	 <div class="form-group row m-b-20">
+ <div class="col-12">
+{{ form_widget(form.plainPassword.first, { 'attr': {'class': 'form-control', 'placeholder': "password"} }  ) }}
+
+                       
+                           </div>
+                       </div>
+
+                        	 <div class="form-group row m-b-20">
+                        <div class="col-12">
+{{ form_widget(form.plainPassword.second, { 'attr': {'class': 'form-control', 'placeholder': "password"} }  ) }}
+
+                       
+                           </div>
+                       </div>
+                      
+
+                            <div class="form-group row m-b-20">
+                                                <div class="col-12">
+
+                                                    <div class="checkbox checkbox-success">
+                                                        <input id="remember" type="checkbox" checked="">
+                                                        <label for="remember">
+                                                            I accept <a href="#">Terms and Conditions</a>
+                                                        </label>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+
+                                              <div class="form-group row text-center m-t-10">
+                                                <div class="col-12">
+                                                    <button class="btn btn-block btn-gradient waves-effect waves-light" type="submit">Sign Up Free</button>
+                                                </div>
+                                            </div>
+
+
+                                              </div>
+                                         {{ form_end(form) }}
+
+                                           <div class="row m-t-50">
+                                            <div class="col-sm-12 text-center">
+                                                <p class="text-muted">Already have an account?  <a href="{{path('fos_user_security_login')}}" class="text-dark m-l-5"><b>Sign In</b></a></p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end card-box-->
+
+
+                        </div>
+                        <!-- end wrapper -->
+
+                    </div>
+                </div>
+         
+        <!-- END HOME -->
+
+
+
+        </div></section></body>

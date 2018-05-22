@@ -1,0 +1,23 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+    <h1>Champ edit</h1>
+
+    {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+      <br><br>
+            <button type="button" class="btn btn-warning btn-rounded waves-light waves-effect w-md" style="display: block; margin: 0 auto;">Edit</button>
+      {{ form_end(edit_form) }}
+
+    <ul>
+     
+     <a href="{{ path('champ_index') }}" class="btn btn-info btn-rounded waves-light waves-effect w-md">Back to the list</a>
+
+    
+        
+            {{ form_start(delete_form) }}
+<button type="submit" class="btn btn-danger btn-rounded waves-light waves-effect w-md">Delete</button>            {{ form_end(delete_form) }}
+            {{ form_end(delete_form) }}
+     
+    </ul>
+{% endblock %}
