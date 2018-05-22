@@ -23,6 +23,7 @@ class TemplateType extends AbstractType
 
 
         ->add('fichierTemplate', FileType::class, array(
+            'data_class' => null,
             'label' => "Template en HTML  : ",
             'attr' => ['class' => 'form-control'],
             'label_attr' => ['class' => 'form-control-label'],
