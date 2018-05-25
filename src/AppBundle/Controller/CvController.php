@@ -41,6 +41,9 @@ class CvController extends Controller
     {
         $cv = new Cv();
         $form = $this->createForm('AppBundle\Form\CvType', $cv);
+		$em = $this->getDoctrine()->getManager();
+
+        $templates = $em->getRepository('AppBundle:Template')->findAll();
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -54,6 +57,8 @@ class CvController extends Controller
         return $this->render('cv/new.html.twig', array(
             'cv' => $cv,
             'form' => $form->createView(),
+			'templates' => $templates,
+			'url' => $this->getParameter('template_directory')."/"
         ));
     }
 

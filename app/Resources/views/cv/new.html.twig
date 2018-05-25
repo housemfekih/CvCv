@@ -5,8 +5,31 @@
 
     {{ form_start(form) }}
         {{ form_widget(form) }}
+		{% for template in templates %}
+			
+			<!-- <iframe class="browser1" src="{{ url ~ template.fichierTemplate}}"> </iframe> -->
+
+            <div class="photo" data-zoom="large.jpg" >
+
+			<img src="{{ asset (url ~ template.content)}}" style="height:320px; width:300px" ></img>
+			{{ template.nomTemplate }}
+
+            </div>
+
+		{% endfor %}
+
+
+
+
+
+
+
+
         <button type="submit" class="btn btn-success btn-rounded waves-light waves-effect w-md"  style="display: block; margin: 0 auto;">Creer un nouveau CV</button>
     {{ form_end(form) }}
+
+
+
 
     <ul>
         <li>
@@ -14,3 +37,10 @@
         </li>
     </ul>
 {% endblock %}
+
+{% block javascripts %}
+    <script>
+    $('.photo').zizoom();
+
+    </script>
+        {% endblock %}

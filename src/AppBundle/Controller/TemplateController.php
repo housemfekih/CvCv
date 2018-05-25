@@ -61,6 +61,10 @@ class TemplateController extends Controller
             // instead of its contents
             $template->setFichierTemplate($fileName);
 			
+			$homepage = file_get_contents($this->getParameter('template_directory').'/'.$fileName);
+			$imageName = $this->generateUniqueFileName().'.jpg';
+			$this->get('knp_snappy.image')->generate('http://localhost/resume_builder/web/app_dev.php/template/test/index', $this->getParameter('template_directory').'/'.'/'. $imageName );
+			$template->setContent($imageName);
             $em = $this->getDoctrine()->getManager();
             $em->persist($template);
             $em->flush();
@@ -109,7 +113,7 @@ class TemplateController extends Controller
     public function editAction(Request $request, Template $template)
     {
         $deleteForm = $this->createDeleteForm($template);
-        $editForm = $this->createForm('AppBundle\Form\TemplateType', $template);
+        $editForm = $this->createForm('AppBundle\Form\TemplateEditType', $template);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
@@ -159,5 +163,18 @@ class TemplateController extends Controller
             ->setMethod('DELETE')
             ->getForm()
         ;
+    }
+	
+	/**
+     * Lists all template entities.
+     *
+     * @Route("/test/{p}", name="template_test")
+     */
+    public function testAction($p)
+    {
+
+        return $this->render('templates/'.$p.'.html.twig', array(
+     
+        ));
     }
 }

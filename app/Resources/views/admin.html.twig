@@ -1,34 +1,38 @@
-
 <!DOCTYPE html>
 <html>
-	<meta charset="utf-8" />
-		   <meta http-equiv="Content-Type" content="text/html; charset={{ _charset }}" />
-        <title>{% trans from 'FOSMessageBundle' %}messenger{% endtrans %}</title>
+    <head>
+        <meta charset="utf-8" />
+        <title>Abstack - Responsive Web App Kit</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
+
+        <!-- Toastr css -->
+        <link rel="stylesheet" href="{{ asset ('template/plugins/jquery-toastr/jquery.toast.min.css')}}">
+        <!--Form Wizard-->
+       <link rel="stylesheet" href="{{ asset ('template/plugins/jquery.steps/css/jquery.steps.css')}}">
+ 
         <!-- App favicon -->
         <link rel="shortcut icon" href="{{ asset ('template/assets/images/favicon.ico')}}">
-
-    <!-- Toastr css -->
-        <link rel="stylesheet" href="{{ asset ('template/plugins/jquery-toastr/jquery.toast.min.css')}}">
-
-        <!--calendar css-->
-        <link rel="stylesheet" href="{{ asset ('template/plugins/fullcalendar/css/fullcalendar.min.css')}}">
-
         <!-- Summernote css -->
-       <link rel="stylesheet" href="{{ asset ('template/plugins/summernote/summernote-bs4.css')}}">
-
+         <link rel="stylesheet" href="{{ asset ('template/plugins/summernote/summernote-bs4.css')}}">
         <!-- DataTables -->
-        <link rel="stylesheet" href="{{ asset ('template/plugins/datatables/dataTables.bootstrap4.min.css')}}">
-        <link rel="stylesheet" href="{{ asset ('template/plugins/datatables/buttons.bootstrap4.min.css')}}">
-        <!-- Responsive datatable examples -->
-        <link rel="stylesheet" href="{{ asset ('template/plugins/datatables/responsive.bootstrap4.min.css')}}">
-      
+         <link rel="stylesheet" href="{{ asset ('template/plugins/datatables/dataTables.bootstrap4.min.css')}}">
+         <link rel="stylesheet" href="{{ asset ('template/plugins/datatables/buttons.bootstrap4.min.css')}}">
+        <!--calendar css-->
+         <link rel="stylesheet" href="{{ asset ('template/plugins/fullcalendar/css/fullcalendar.min.css')}}">
+
         <!-- App css -->
         <link rel="stylesheet" href="{{ asset ('css/chosen.css')}}">
         <link rel="stylesheet" href="{{ asset ('template/assets/css/bootstrap.min.css')}}">
         <link rel="stylesheet" href="{{ asset ('template/assets/css/icons.css')}}">
         <link rel="stylesheet" href="{{ asset ('template/assets/css/metismenu.min.css')}}">
         <link rel="stylesheet" href="{{ asset ('template/assets/css/style.css')}}">
+
+         
+
 
         <script src="{{ asset ('template/assets/js/modernizr.min.js')}}"></script>
 
@@ -37,10 +41,7 @@
 
     <body>
 
-
-<div class="btn btn-success waves-effect waves-light btn-sm" id="toastr-three"></div>
-
-       <!-- Begin page -->
+        <!-- Begin page -->
         <div id="wrapper">
 
             <!-- Top Bar Start -->
@@ -50,10 +51,10 @@
                 <div class="topbar-left">
                     <a href="index.html" class="logo">
                         <span>
-                            <img src="{{ asset ('template/assets/images/logo.png')}}" alt="" height="16">
+                            <img src="assets/images/logo.png" alt="" height="16">
                         </span>
                         <i>
-                            <img src="{{ asset ('template/assets/images/logo_sm.png')}}" alt="" height="28">
+                            <img src="assets/images/logo_sm.png" alt="" height="28">
                         </i>
                     </a>
                 </div>
@@ -83,36 +84,7 @@
                                         <p class="notify-details">Caleb Flakelar commented on Admin<small class="text-muted">1 min ago</small></p>
                                     </a>
 
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon bg-info"><i class="mdi mdi-account-plus"></i></div>
-                                        <p class="notify-details">New user registered.<small class="text-muted">5 hours ago</small></p>
-                                    </a>
-
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon bg-danger"><i class="mdi mdi-heart"></i></div>
-                                        <p class="notify-details">Carlos Crouch liked <b>Admin</b><small class="text-muted">3 days ago</small></p>
-                                    </a>
-
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon bg-warning"><i class="mdi mdi-comment-account-outline"></i></div>
-                                        <p class="notify-details">Caleb Flakelar commented on Admin<small class="text-muted">4 days ago</small></p>
-                                    </a>
-
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon bg-purple"><i class="mdi mdi-account-plus"></i></div>
-                                        <p class="notify-details">New user registered.<small class="text-muted">7 days ago</small></p>
-                                    </a>
-
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon bg-custom"><i class="mdi mdi-heart"></i></div>
-                                        <p class="notify-details">Carlos Crouch liked <b>Admin</b><small class="text-muted">13 days ago</small></p>
-                                    </a>
-                                </div>
+                                    
 
                                 <!-- All-->
                                 <a href="javascript:void(0);" class="dropdown-item text-center text-primary notify-item notify-all">
@@ -143,34 +115,8 @@
                                         <p class="text-muted font-13 mb-0 user-msg">Hi, How are you? What about our next meeting</p>
                                     </a>
 
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon"><img src="assets/images/users/avatar-3.jpg" class="img-fluid rounded-circle" alt="" /> </div>
-                                        <p class="notify-details">Sam Garret</p>
-                                        <p class="text-muted font-13 mb-0 user-msg">Yeah everything is fine</p>
-                                    </a>
-
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon"><img src="{{ asset ('template/assets/images/users/avatar-4.jpg')}}" class="img-fluid rounded-circle" alt="" /> </div>
-                                        <p class="notify-details">Karen Robinson</p>
-                                        <p class="text-muted font-13 mb-0 user-msg">Wow that's great</p>
-                                    </a>
-
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon"><img src={{ asset ('template/"assets/images/users/avatar-5.jpg')}}" class="img-fluid rounded-circle" alt="" /> </div>
-                                        <p class="notify-details">Sherry Marshall</p>
-                                        <p class="text-muted font-13 mb-0 user-msg">Hi, How are you? What about our next meeting</p>
-                                    </a>
-
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon"><img src="{{ asset ('template/assets/images/users/avatar-6.jpg')}}" class="img-fluid rounded-circle" alt="" /> </div>
-                                        <p class="notify-details">Shawn Millard</p>
-                                        <p class="text-muted font-13 mb-0 user-msg">Yeah everything is fine</p>
-                                    </a>
-                                </div>
+                                
+                                   
 
                                 <!-- All-->
                                 <a href="javascript:void(0);" class="dropdown-item text-center text-primary notify-item notify-all">
@@ -183,8 +129,9 @@
                         <li class="dropdown notification-list">
                             <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button"
                                aria-haspopup="false" aria-expanded="false">
-
-                         {% if app.user.avatar is null %}
+                                
+                                
+                                  {% if app.user.avatar is null %}
                                <img src="{{ asset ('template/assets/images/users/avatar-1.jpg')}}" alt="user" class="rounded-circle">
                         {% else %}	
 							    <img src="{{ asset ('public/uploads/avatars/' ~ app.user.avatar) }}" alt="avatar" class="rounded-circle">
@@ -193,18 +140,22 @@
                                 
                                  <span class="ml-1">{{ app.user.username }} <i class="mdi mdi-chevron-down"></i> </span>
                             </a>
+                                
+                                
+                              
                             <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                                 <!-- item-->
                                 <div class="dropdown-item noti-title">
                                     <h6 class="text-overflow m-0">Welcome !</h6>
                                 </div>
+
                                 <!-- item-->
-                                <a href="{{ path('fos_user_profile_show')}}" class="dropdown-item notify-item">
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
                                     <i class="fi-head"></i> <span>My Account</span>
                                 </a>
 
                                 <!-- item-->
-                                       <a href="{{ path('fos_user_profile_edit')}}" class="dropdown-item notify-item">
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
                                     <i class="fi-cog"></i> <span>Settings</span>
                                 </a>
 
@@ -219,9 +170,10 @@
                                 </a>
 
                                 <!-- item-->
-                                <a href="{{ path('logout_page')}}" class="dropdown-item notify-item">
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
                                     <i class="fi-power"></i> <span>Logout</span>
                                 </a>
+
                             </div>
                         </li>
 
@@ -244,9 +196,6 @@
                 </nav>
 
             </div>
-            <!-- Top Bar End -->
-
-
             <!-- Top Bar End -->
 
 
@@ -276,23 +225,18 @@
                                     <li><a href="icons-feather.html">Feather Icons</a></li>
                                 </ul>
                             </li>
-
-
-                 <li>
+                            <li>
                                 <a href="javascript: void(0);"><i class="fi-box"></i><span> Tools </span> <span class="menu-arrow"></span></a>
                                 <ul class="nav-second-level" aria-expanded="false">
-                    <li><a href="{{ path('cv_index') }}"><span class="lbl">Create CV</span></a></li>
-	                <li><a href="{{ path('template_index') }}"><span class="lbl">Templates</span></a></li>
-	                 <li><a href="{{ path('groupe_index') }}"><span class="lbl">Groupes</span></a></li>			  					   </span></a></li>
-	                 <li><a href="{{ path('champ_index') }}"><span class="lbl">Champs</span></a></li>
-					<li><a href="{{ path('section_index') }}"><span class="lbl">Sections</span></a></li>
+                               <li><a href="{{ path('cv_index') }}"><span class="lbl">Create CV</span></a></li>
+	                          <li><a href="{{ path('template_index') }}"><span class="lbl">Templates</span></a></li>
+	                          <li><a href="{{ path('groupe_index') }}"><span class="lbl">Groupes</span></a></li>			  					   </span></a></li>
+	                          <li><a href="{{ path('champ_index') }}"><span class="lbl">Champs</span></a></li>
+					         <li><a href="{{ path('section_index') }}"><span class="lbl">Sections</span></a></li>
 
                                 </ul>
                             </li>
-
-                          
-
-                            <li>
+                             <li>
                                 <a href="javascript: void(0);"><i class="fi-mail"></i><span> Email </span> <span class="menu-arrow"></span></a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                     <li><a href="{{ path('fos_message_inbox')}}">Inbox</a></li>
@@ -308,25 +252,16 @@
                                     <li><a href="{{ path('user_index')}}">Liste users</a></li>
                              </ul>
                             </li>
-
-
-                            
-                            
-
-                            <li class="menu-title">More</li>
-
                             <li>
-                                <a href="javascript: void(0);"><i class="fi-map"></i> <span> Maps </span> <span class="menu-arrow"></span></a>
+                                <a href="javascript: void(0);"><i class="fi-mail"></i><span> Email </span> <span class="menu-arrow"></span></a>
                                 <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="maps-google.html">Google Maps</a></li>
-                                    <li><a href="maps-vector.html">Vector Maps</a></li>
-                                    <li><a href="maps-mapael.html">Mapael Maps</a></li>
+                                    <li><a href="email-inbox.html">Inbox</a></li>
+                                    <li><a href="email-read.html">Read Email</a></li>
+                                    <li><a href="email-compose.html">Compose Email</a></li>
                                 </ul>
                             </li>
-                            <li><a href="{{ path('calend_page')}}"><i class="fi-clock"></i> <span>Calendar</span> </a></li>
 
-                            
-
+   
 
                         </ul>
 
@@ -347,12 +282,15 @@
             <!-- ============================================================== -->
             <div class="content-page">
                 <!-- Start content -->
-               
                 <div class="content">
                     <div class="container-fluid">
-   
-                       
-                        {% block fos_user_content %}
+
+
+                     
+
+                               
+
+                     {% block fos_user_content %}
                         {% endblock %}
                         {% block calend %}
                         {% endblock %}
@@ -363,14 +301,11 @@
                         {% block body %}
                          {% endblock %}
      
-                        <!-- end row -->
+                    
 
 
-                       
+                     
 
-                       
-
-                           
 
 
                     </div> <!-- container -->
@@ -392,12 +327,9 @@
         </div>
         <!-- END wrapper -->
 
-      <!-- Toastr js -->
-         <script type="text/javascript" src="{{ asset ('template/plugins/jquery-toastr/jquery.toast.min.js')}}"></script>
-         <script type="text/javascript" src="{{ asset ('template/assets/pages/jquery.toastr.js')}}"></script>
-      
 
-        <!-- jQuery  -->
+
+         <!-- jQuery  -->
         <script type="text/javascript" src="{{ asset ('template/assets/js/jquery.min.js')}}"></script>
         <script type="text/javascript" src="{{ asset ('template/assets/js/popper.min.js')}}"></script>
         <script type="text/javascript" src="{{ asset ('template/assets/js/bootstrap.min.js')}}"></script>
@@ -406,74 +338,44 @@
         <script type="text/javascript" src="{{ asset ('template/assets/js/jquery.slimscroll.js')}}"></script>
         <script type="text/javascript" src="{{ asset ('template/plugins/waypoints/lib/jquery.waypoints.min.js')}}"></script>
         <script type="text/javascript" src="{{ asset ('template/plugins/counterup/jquery.counterup.min.js')}}"></script>
-    <!-- Jquery-Ui -->
-         <script type="text/javascript" src="{{ asset ('template/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
-        <!-- Chart JS -->
-        <script type="text/javascript" src="{{ asset ('template/plugins/chart.js/chart.bundle.js')}}"></script>
 
-        <!-- init dashboard -->
-          <script type="text/javascript" src="{{ asset ('template/assets/pages/jquery.dashboard.init.js')}}"></script>
-   
+
+
+        <!--Form Wizard-->
+        <script type="text/javascript" src="{{ asset ('template/plugins/jquery.steps/js/jquery.steps.min.js')}}"></script>
+
+        <!--wizard initialization-->
+        <script type="text/javascript" src="{{ asset ('template/assets/pages/jquery.wizard-init.js')}}"></script>
+
+         <!-- Required datatable js -->
+        <script type="text/javascript" src="{{ asset ('template/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+        <script type="text/javascript" src="{{ asset ('template/plugins/datatables/dataTables.bootstrap4.min.js')}}"></script>
+         <!-- Buttons examples -->
+        <script type="text/javascript" src="{{ asset ('template/plugins/datatables/dataTables.buttons.min.js')}}"></script>
+        <script type="text/javascript" src="{{ asset ('template/plugins/datatables/buttons.bootstrap4.min.js')}}"></script>
+        <script type="text/javascript" src="{{ asset ('template/plugins/datatables/jszip.min.js')}}"></script>
+        <script type="text/javascript" src="{{ asset ('template/plugins/datatables/pdfmake.min.js')}}"></script>
+        <script type="text/javascript" src="{{ asset ('template/plugins/datatables/vfs_fonts.js')}}"></script>
+        <script type="text/javascript" src="{{ asset ('template/plugins/datatables/buttons.html5.min.js')}}"></script>
+        <script type="text/javascript" src="{{ asset ('template/plugins/datatables/buttons.print.min.js')}}"></script>
+
+        <!--Summernote js-->
+        <script type="text/javascript" src="{{ asset ('template/plugins/summernote/summernote-bs4.min.js')}}"></script>
+	     <!--Choosen js-->
+        <script src="{{ asset ('js/chosen.jquery.min.js')}}"></script>
+	    <script src="{{ asset ('js/prism.js')}}"></script>
+        
+          {% block javascripts %} {% endblock %}  
+
+        <!-- Jquery-Ui -->
+        <script type="text/javascript" src="{{ asset ('template/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
+
+        <!-- SCRIPTS -->
+        <script type="text/javascript" src="{{ asset ('template/plugins/moment/moment.js')}}"></script>
+        <script type="text/javascript" src="{{ asset ('template/plugins/fullcalendar/js/fullcalendar.min.js')}}"></script>
+        <script type="text/javascript" src="{{ asset ('template/assets/pages/jquery.calendar.js')}}"></script>
+
+
         <!-- App js -->
         <script type="text/javascript" src="{{ asset ('template/assets/js/jquery.core.js')}}"></script>
         <script type="text/javascript" src="{{ asset ('template/assets/js/jquery.app.js')}}"></script>
-		  <!--Summernote js-->
-        <script src="{{ asset ('template/plugins/summernote/summernote-bs4.min.js')}}"></script>
-  <script type="text/javascript" src="{{ asset ('template/plugins/moment/moment.js')}}"></script>
-        <script type="text/javascript" src="{{ asset ('template/plugins/fullcalendar/js/fullcalendar.min.js')}}"></script>
-        <script type="text/javascript" src="{{ asset ('template/assets/pages/jquery.calendar.js')}}"></script>
-  <script>
-            jQuery(document).ready(function(){
-                $('.summernote').summernote({
-                    height: 150,                 // set editor height
-                    minHeight: null,             // set minimum height of editor
-                    maxHeight: null,             // set maximum height of editor
-                    focus: false                 // set focus to editable area after initializing summernote
-                });
-            });
-        </script>
-
-
-	<script src="{{ asset ('js/chosen.jquery.min.js')}}"></script>
-	<script src="{{ asset ('js/prism.js')}}"></script>
-            {% block javascripts %}
-	          
-    
-
-             {% endblock %}
-
-
-
- <!-- Required datatable js -->
-           <script type="text/javascript" src="{{ asset ('template/plugins/datatables/jquery.dataTables.min.js')}}"></script>
-          <script type="text/javascript" src="{{ asset ('template/plugins/datatables/dataTables.bootstrap4.min.js')}}"></script>
-        <!-- Buttons examples -->
-        <script type="text/javascript" src="{{ asset ('template/plugins/datatables/dataTables.buttons.min.js')}}"></script>
-          <script type="text/javascript" src="{{ asset ('template/plugins/datatables/buttons.bootstrap4.min.js')}}"></script>
-           <script type="text/javascript" src="{{ asset ('template/plugins/datatables/jszip.min.js')}}"></script>
-          <script type="text/javascript" src="{{ asset ('template/plugins/datatables/pdfmake.min.js')}}"></script>
-            <script type="text/javascript" src="{{ asset ('template/plugins/datatables/vfs_fonts.js')}}"></script>
-         <script type="text/javascript" src="{{ asset ('template/plugins/datatables/buttons.html5.min.js')}}"></script>
-         <script type="text/javascript" src="{{ asset ('template/plugins/datatables/buttons.print.min.js')}}"></script>
-        <!-- Responsive examples -->
-        <script type="text/javascript" src="{{ asset ('template/plugins/datatables/dataTables.responsive.min.js')}}"></script>
-         <script type="text/javascript" src="{{ asset ('template/plugins/datatables/responsive.bootstrap4.min.js')}}"></script>
-        <script type="text/javascript">
-            $(document).ready(function() {
-                $('#datatable').DataTable();
-
-                //Buttons examples
-                var table = $('#datatable-buttons').DataTable({
-                    lengthChange: false,
-                    buttons: ['copy', 'excel', 'pdf']
-                });
-
-                table.buttons().container()
-                        .appendTo('#datatable-buttons_wrapper .col-md-6:eq(0)');
-            } );
-
-        </script>
-      
-
-    </body>
-</html>

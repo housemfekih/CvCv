@@ -19,14 +19,14 @@ class TemplateType extends AbstractType
         ->add('nomTemplate', TextType::class, array(
             'label' => "Nom de template : ",
             'attr' => ['class' => 'form-control'],
-            'label_attr' => ['class' => 'form-control-label']))
+            'label_attr' => ['class' => 'control-label']))
 
 
         ->add('fichierTemplate', FileType::class, array(
             'data_class' => null,
             'label' => "Template en HTML  : ",
             'attr' => ['class' => 'form-control'],
-            'label_attr' => ['class' => 'form-control-label'],
+            'label_attr' => ['class' => 'control-label'],
             'multiple' => false
         ))
        
@@ -41,7 +41,7 @@ class TemplateType extends AbstractType
                  'multiple' => false,
                  'label' => "Nom de groupe : ",
                 'attr' => ['class' => 'chosen-select form-control'],
-                'label_attr' => ['class' => 'form-control-label']
+                'label_attr' => ['class' => 'control-label']
             ));
         }/**
      * {@inheritdoc}

@@ -13,13 +13,13 @@ security:
 
     firewalls:
         main:
+            logout_on_user_change: true
             pattern: ^/
             form_login:
                 provider: fos_userbundle
                 login_path: /login
                 csrf_token_generator: security.csrf.token_manager
                 success_handler: redirect.after.login
-
  
             oauth:
                 failure_path: your_path

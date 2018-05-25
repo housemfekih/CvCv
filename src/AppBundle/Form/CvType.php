@@ -28,12 +28,27 @@ class CvType extends AbstractType
 			// used to render a select box, check boxes or radios
 			 'multiple' => false,
              'label' => "Template : ",
-            'attr' => ['class' => 'chosen-select form-control tmpl'],
+            'attr' => ['class' => 'chosen-select form-control tmpl hidden'],
             'label_attr' => ['class' => 'form-control-label'],
 			'placeholder'=> "Choisir..."
         ))
 
-        ->add('userID');
+        ->add('userID')
+        ->add('templateID', EntityType::class, array(
+			// looks for choices from this entity
+			'class' => 'AppBundle:Template',
+
+			// uses the User.username property as the visible option string
+			'choice_label' => 'content',
+
+			// used to render a select box, check boxes or radios
+			 'multiple' => false,
+             'label' => "Template : ",
+            'attr' => ['class' => 'chosen-select form-control tmpl hidden'],
+            'label_attr' => ['class' => 'form-control-label'],
+			'placeholder'=> "Choisir..."
+        ));
+
         
        // ->add('fichierCv')->add('contenuCv')->add('templateID')->add('userID');
     }/**

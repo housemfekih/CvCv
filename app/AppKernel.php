@@ -22,6 +22,7 @@ class AppKernel extends Kernel
             new FOS\MessageBundle\FOSMessageBundle(),
             new Http\HttplugBundle\HttplugBundle(), // If you require the php-http/httplug-bundle package.
             new HWI\Bundle\OAuthBundle\HWIOAuthBundle(),
+			new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
 
 
         ];

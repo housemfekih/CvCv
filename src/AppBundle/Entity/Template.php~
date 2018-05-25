@@ -31,7 +31,7 @@ class Template
     private $nomTemplate;
 
      /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="text")
      *
      * @Assert\NotBlank(message="Please, upload the template file as a HTML file.")
      * @Assert\File(mimeTypes={ "text/html" })
@@ -44,6 +44,14 @@ class Template
      * @ORM\JoinColumn(nullable=false)
      */
     private $groupeID;
+	
+	
+	/**
+     * @var text
+     *
+     * @ORM\Column(name="content", type="text")
+     */
+    private $content;
 
 
     /**
@@ -128,4 +136,3 @@ class Template
         return $this->groupeID;
     }
 }
-

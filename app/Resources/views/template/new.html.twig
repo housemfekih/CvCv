@@ -1,24 +1,88 @@
 {% extends 'admin.html.twig' %}
 
 {% block body %}
-    <h1>Template creation</h1>
+     
+       <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box">
+                                    <h4 class="page-title float-left">Form Wizard</h4>
 
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <button type="submit" class="btn btn-success btn-rounded waves-light waves-effect w-md"  style="display: block; margin: 0 auto;">Creer un nouveau template</button>
-    {{ form_end(form) }}
+                                    <ol class="breadcrumb float-right">
+                                       
+                                        <li class="breadcrumb-item"><a href="{{path ('template_index')}}">Liste template</a></li>
+                                        <li class="breadcrumb-item active">Nouveau template</li>
+                                    </ol>
 
-    <ul>
-        <li>
-            <a href="{{ path('template_index') }}">Back to the list</a>
-        </li>
-    </ul>
-{% endblock %}
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end row -->
+
+
+                        <!-- Basic Form Wizard -->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card-box">
+                                    <h4 class="m-t-0 header-title"><b>Nouveau template</b></h4>
+                                  
+
+
+{{ form_start(form, { 'attr': { 'class': 'form-group clearfix' , 'id': 'basic-form'} }) }}
+    {{ form_errors(form) }}
+    <div>
+  <h3>Nom template</h3>
+     <section>
+
+    <div>
+        {{ form_label(form.nomTemplate) }}
+        {{ form_errors(form.nomTemplate) }}
+        {{ form_widget(form.nomTemplate) }}
+    </div>
+
+    </section>
+  <h3>Groupe</h3>
+<section>
+
+ <div>  
+ 
+     
+        {{ form_row(form.groupeID) }}
+    
+
+    </section>
+
+  <h3>Fichier</h3>
+<section>
+
+    <div>
+       {{ form_label(form.fichierTemplate) }}
+        {{ form_errors(form.fichierTemplate) }}
+        {{ form_widget(form.fichierTemplate) }}
+    </div>
+
+    </section>
+    
+{{ form_end(form) }}
+
+
+                                   </div>
+                                   </div></div>
+
+                        <!-- End row -->
+
+
+
+
+
+
+
+ {% endblock %}
 {% block javascripts %}
     <script>
 $(document).ready( function () {
 
-  $(".chosen-select").chosen({});
+  //$(".chosen-select").chosen({});
 });
 
     </script>
